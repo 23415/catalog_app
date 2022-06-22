@@ -1,11 +1,15 @@
 import 'package:catalogapp/routes.dart';
+import 'package:catalogapp/screens/account.dart';
+import 'package:catalogapp/screens/cart.dart';
 import 'package:catalogapp/screens/home_page.dart';
 import 'package:catalogapp/screens/login_page.dart';
+import 'package:catalogapp/screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:google_fonts/google_fonts.dart';
-void main(){
+
+void main() {
   runApp(const MyApp());
 }
 
@@ -16,13 +20,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.deepPurple,
-          fontFamily: GoogleFonts.lato().fontFamily,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
       initialRoute: "/login",
       routes: {
-        Routes.homeroutes: (context)=> Homepage(),
-        Routes.loginroutes: (context)=> LoginPage(),
+        Routes.homeroutes: (context) => Homepage(),
+        Routes.loginroutes: (context) => LoginPage(),
+        Routes.cartroutes: (context) => Cartpage(),
+        Routes.accountroutes: (context) => Accountpage(),
+        Routes.signuproutes: (context) => Signuppage(),
       },
     );
   }
